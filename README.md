@@ -20,7 +20,6 @@ default Fallback
 **2. localhost:8080/test2**
 - Add Only one request in 60 seconds CircuitBreaker rateLimiter filter 
 - No error occurred despite sending more than 2 requests
-- it doesn't work
 
 
 **Request**
@@ -29,8 +28,15 @@ curl localhost:8080/test2
 curl localhost:8080/test2
 ```
 
-**Response**
+**Actual Response**
 ```
 test rate limit
 test rate limit
 ```
+
+**Expected Response**
+```
+test rate limit
+default Fallback
+```
+
